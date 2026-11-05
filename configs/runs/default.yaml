@@ -1,0 +1,3 @@
+data_root: data/test
+artifacts_root: artifacts
+max_new_tokens: 256

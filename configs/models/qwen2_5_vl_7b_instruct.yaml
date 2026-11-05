@@ -1,0 +1,13 @@
+backend: qwen_vl
+model_key: qwen2_5_vl_7b_instruct
+model_name: Qwen/Qwen2.5-VL-7B-Instruct
+local_model_dir: ckpts/Qwen2.5-VL-7B-Instruct
+ckpt_dir: ckpts
+dtype: bfloat16
+device_map: auto
+attn_implementation: flash_attention_2
+trust_remote_code: true
+max_new_tokens: 256
+temperature: 0.0
+do_sample: false
+model_batch_size: 8

@@ -1,0 +1,14 @@
+prompt_id: wheelchair_instruction_main
+task: wheelchair
+output_schema:
+  predicted_accessibility_label: string
+  predicted_obstacle_description: string
+  navigation_instruction: string
+
+rules:
+  - Infer accessibility label from the provided keyframes and context.
+  - Use metric distances in meters.
+  - Prioritize clearance, surface quality, and route width for wheelchair users.
+  - For HighRisk and Blocked, emphasize caution or rerouting.
+  - For Bypass, use a three-part structure with explicit passing side.
+  - Output structured JSON only.

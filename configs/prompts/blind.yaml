@@ -1,0 +1,14 @@
+prompt_id: blind_instruction_main
+task: blind
+output_schema:
+  predicted_accessibility_label: string
+  predicted_obstacle_description: string
+  navigation_instruction: string
+
+rules:
+  - Infer accessibility label from the provided keyframes and context.
+  - Use step counts instead of metric distances.
+  - Use clock directions instead of left/right.
+  - For HighRisk and Blocked, emphasize caution and stopping behavior.
+  - For Bypass, use a three-part structure with approach steps, avoidance direction, and continuation steps.
+  - Output structured JSON only.

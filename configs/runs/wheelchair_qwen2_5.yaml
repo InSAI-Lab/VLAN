@@ -1,0 +1,6 @@
+task: wheelchair
+prompt_id: wheelchair_instruction_main
+model_config: configs/models/qwen2_5_vl_7b_instruct.yaml
+data_root: data/test
+artifacts_root: artifacts
+max_new_tokens: 256

@@ -1,0 +1,32 @@
+prompt_id: pedestrian_v3_6_frozen
+task: pedestrian
+output_schema:
+  predicted_obstacle_description: string
+  navigation_instruction: string
+
+rules:
+  - Output concrete obstacle description and navigation instruction.
+  - Do not use generic obstacle-only phrases like "object" or "obstacle" by themselves.
+  - For Bypass, prefer a three-part instruction:
+    1. forward progress with distance,
+    2. side-specific avoidance around the obstacle,
+    3. continuation after passing it.
+  - For Bypass, include numeric metric distances when possible.
+  - The obstacle description and passing side should appear in the same avoidance clause.
+  - For Blocked, output stop-only guidance. No detour, no turn direction, no continued forward motion.
+  - For Passable, avoid overreacting or describing a full detour unless clearly required.
+  - If a safer passing side is provided in context, use that side explicitly and do not flip left and right.
+  - Do not mention coordinates, dx/dz/yaw, or frame indices.
+
+style_skeleton:
+  bypass: "Walk forward about <d1> meters. As you approach the <obstacle>, keep slightly to the <side> to go around it. After passing it, continue toward the goal for about <d2> more meters."
+  passable: "Continue forward for about <d> meters toward the goal."
+  blocked: "Stop and choose another route."
+
+context_fields:
+  - accessibility_label
+  - prefix_motion_summary
+  - goal_summary
+  - obstacle_context_summary
+  - safer_pass_side
+

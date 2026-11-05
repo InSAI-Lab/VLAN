@@ -1,0 +1,12 @@
+backend: llava_onevision_hf
+model_key: llava_onevision_qwen2_0_5b
+model_name: llava-hf/llava-onevision-qwen2-0.5b-ov-hf
+local_model_dir: ckpts/llava-onevision-qwen2-0.5b-ov-hf
+ckpt_dir: ckpts
+dtype: bfloat16
+device_map: auto
+trust_remote_code: true
+max_new_tokens: 256
+temperature: 0.0
+do_sample: false
+model_batch_size: 1

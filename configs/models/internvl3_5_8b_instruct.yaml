@@ -1,0 +1,16 @@
+backend: internvl_chat
+model_key: internvl3_5_8b_instruct
+model_name: OpenGVLab/InternVL3.5-8B-Instruct
+local_model_dir: ckpts/InternVL3.5-8B-Instruct
+ckpt_dir: ckpts
+dtype: bfloat16
+device_map: auto
+trust_remote_code: true
+use_flash_attn: true
+image_size: 448
+min_tiles_per_image: 1
+max_tiles_per_image: 6
+use_thumbnail: true
+max_new_tokens: 256
+temperature: 0.0
+do_sample: false

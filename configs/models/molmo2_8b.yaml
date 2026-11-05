@@ -1,0 +1,12 @@
+backend: molmo_hf
+model_key: molmo2_8b
+model_name: allenai/Molmo2-8B
+local_model_dir: ckpts/Molmo2-8B
+ckpt_dir: ckpts
+dtype: bfloat16
+device_map: auto
+trust_remote_code: true
+max_new_tokens: 256
+temperature: 0.0
+do_sample: false
+model_batch_size: 1

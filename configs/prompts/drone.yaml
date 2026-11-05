@@ -1,0 +1,26 @@
+prompt_id: drone_action_main
+task: drone
+output_schema:
+  predicted_actions: list
+
+rules:
+  - Predict the future raw actions for the drone.
+  - Use observed prefix actions as motion scale reference.
+  - Respect corrected accessibility for drone.
+  - Use goal and obstacle geometry from trajectory context.
+  - Use safer pass side if bypass is needed.
+  - Avoid repetitive templated action sequences.
+  - Keep output in structured JSON only.
+
+context_fields:
+  - observed_prefix_actions
+  - observed_action_stats
+  - rollout_start_pose
+  - goal_local
+  - obstacle_local
+  - corrected_accessibility
+  - safer_pass_side
+  - protected_radius_hint
+  - suggested_bypass_corridor
+  - early_bypass_direction_hint
+

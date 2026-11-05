@@ -1,0 +1,11 @@
+backend: idefics3_hf
+model_key: idefics3_8b_llama3
+model_name: HuggingFaceM4/Idefics3-8B-Llama3
+local_model_dir: ckpts/Idefics3-8B-Llama3
+ckpt_dir: ckpts
+dtype: bfloat16
+device_map: auto
+max_new_tokens: 256
+temperature: 0.0
+do_sample: false
+model_batch_size: 1
